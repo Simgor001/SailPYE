@@ -1,0 +1,192 @@
+{
+    "type": "theme",
+    "name": "Sail dark",
+    "info": "Sail Python Editor的黑色主题，改自Atom的One dark pro",
+    "msg":"修改主题需要注意，样式的顺序是[前景色,背景色,字体,字体大小,粗体,斜体]",
+    "language": "Python",
+    "theme": {
+        "default": [
+            "#d7dae0",
+            "#282c34",
+            "WenQuanYi Micro Hei Mono",
+            18,
+            false,
+            false
+        ],
+        "comment": [
+            "#A9A9A9",
+            "#282c34",
+            "WenQuanYi Micro Hei Mono",
+            18,
+            false,
+            false
+        ],
+        "number": [
+            "#FFE4B5",
+            "#282c34",
+            "WenQuanYi Micro Hei Mono",
+            18,
+            false,
+            false
+        ],
+        "doubleQuotedString": [
+            "#FFA07A",
+            "#282c34",
+            "WenQuanYi Micro Hei Mono",
+            18,
+            false,
+            false
+        ],
+        "singleQuotedString": [
+            "#FFA07A",
+            "#282c34",
+            "WenQuanYi Micro Hei Mono",
+            18,
+            false,
+            false
+        ],
+        "keyword": [
+            "#c678dd",
+            "#282c34",
+            "WenQuanYi Micro Hei Mono",
+            18,
+            false,
+            false
+        ],
+        "tripleSingleQuotedString": [
+            "#A9A9A9",
+            "#282c34",
+            "WenQuanYi Micro Hei Mono",
+            18,
+            false,
+            false
+        ],
+        "tripleDoubleQuotedString": [
+            "#A9A9A9",
+            "#282c34",
+            "WenQuanYi Micro Hei Mono",
+            18,
+            false,
+            false
+        ],
+        "className": [
+            "#F0E68C",
+            "#282c34",
+            "WenQuanYi Micro Hei Mono",
+            18,
+            false,
+            false
+        ],
+        "functionMethodName": [
+            "#40E0D0",
+            "#282c34",
+            "WenQuanYi Micro Hei Mono",
+            18,
+            false,
+            false
+        ],
+        "operator": [
+            "#d7dae0",
+            "#282c34",
+            "WenQuanYi Micro Hei Mono",
+            18,
+            false,
+            false
+        ],
+        "identifier": [
+            "#d7dae0",
+            "#282c34",
+            "WenQuanYi Micro Hei Mono",
+            18,
+            false,
+            false
+        ],
+        "commentBlock": [
+            "#A9A9A9",
+            "#282c34",
+            "WenQuanYi Micro Hei Mono",
+            18,
+            false,
+            false
+        ],
+        "unclosedString": [
+            "#CD5C5C",
+            "#282c34",
+            "WenQuanYi Micro Hei Mono",
+            18,
+            false,
+            false
+        ],
+        "highlightedIdentifier": [
+            "#d7dae0",
+            "#282c34",
+            "WenQuanYi Micro Hei Mono",
+            18,
+            false,
+            false
+        ],
+        "decorator": [
+            "#87CEFA",
+            "#282c34",
+            "WenQuanYi Micro Hei Mono",
+            18,
+            false,
+            false
+        ],
+        "doubleQuotedFString": [
+            "#FFA07A",
+            "#282c34",
+            "WenQuanYi Micro Hei Mono",
+            18,
+            false,
+            false
+        ],
+        "singleQuotedFString": [
+            "#FFA07A",
+            "#282c34",
+            "WenQuanYi Micro Hei Mono",
+            18,
+            false,
+            false
+        ],
+        "tripleSingleQuotedFString": [
+            "#A9A9A9",
+            "#282c34",
+            "WenQuanYi Micro Hei Mono",
+            18,
+            false,
+            false
+        ],
+        "tripleDoubleQuotedFString": [
+            "#A9A9A9",
+            "#282c34",
+            "WenQuanYi Micro Hei Mono",
+            18,
+            false,
+            false
+        ]
+    },
+    "outText": [
+        "#A9A9A9",
+        "#282c34",
+        "WenQuanYi Micro Hei Mono",
+        12,
+        false,
+        false
+    ],
+    "other": {
+        "cursorColor": "#528bff",
+        "cursorLineColor": "#2c313c",
+        "dockBarBackgroundColor": "#282c34",
+        "dockBarForegroundColor": "#A9A9A9",
+        "marginsBackgroundColor": "#282c34",
+        "marginsForegroundColor": "#636d83",
+        "statusBarBackgroundColor": "#21252b",
+        "statusBarForegroundColor": "#A9A9A9",
+        "selectionBackgroundColor": "#404859",
+        "indentationGuidesForegroundColor": "#636d83",
+        "indentationGuidesBackgroundColor": "#636d83",
+        "breakpointBackgroundColor": "#e51400",
+        "breakpointForegroundColor": "#e51400"
+    }
+}

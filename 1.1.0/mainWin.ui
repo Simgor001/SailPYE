@@ -1,0 +1,407 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>400</width>
+    <height>200</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Sail Python Editor</string>
+  </property>
+  <widget class="QWidget" name="centralwidget"/>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>800</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="M_file">
+    <property name="title">
+     <string>文件(&amp;F)</string>
+    </property>
+    <addaction name="A_new"/>
+    <addaction name="A_open"/>
+    <addaction name="A_save"/>
+    <addaction name="A_saveas"/>
+    <addaction name="separator"/>
+    <addaction name="A_set"/>
+    <addaction name="separator"/>
+    <addaction name="A_quit"/>
+   </widget>
+   <widget class="QMenu" name="M_edit">
+    <property name="title">
+     <string>编辑(&amp;E)</string>
+    </property>
+    <addaction name="A_undo"/>
+    <addaction name="A_redo"/>
+    <addaction name="separator"/>
+    <addaction name="A_cut"/>
+    <addaction name="A_copy"/>
+    <addaction name="A_paste"/>
+    <addaction name="A_del"/>
+    <addaction name="separator"/>
+    <addaction name="A_all"/>
+   </widget>
+   <widget class="QMenu" name="M_build">
+    <property name="title">
+     <string>构建(&amp;B)</string>
+    </property>
+    <addaction name="A_run"/>
+   </widget>
+   <widget class="QMenu" name="M_tools">
+    <property name="title">
+     <string>工具(&amp;T)</string>
+    </property>
+    <addaction name="A_add_tools"/>
+    <addaction name="separator"/>
+   </widget>
+   <widget class="QMenu" name="M_help">
+    <property name="title">
+     <string>帮助(&amp;H)</string>
+    </property>
+    <addaction name="A_pydoc"/>
+    <addaction name="A_help"/>
+    <addaction name="separator"/>
+    <addaction name="A_about"/>
+   </widget>
+   <widget class="QMenu" name="M_view">
+    <property name="title">
+     <string>视图(&amp;V)</string>
+    </property>
+    <addaction name="A_wrap"/>
+    <addaction name="A_info_bar"/>
+   </widget>
+   <widget class="QMenu" name="M_task">
+    <property name="title">
+     <string>任务(&amp;S)</string>
+    </property>
+    <addaction name="A_task"/>
+    <addaction name="A_work"/>
+   </widget>
+   <addaction name="M_file"/>
+   <addaction name="M_edit"/>
+   <addaction name="M_view"/>
+   <addaction name="M_task"/>
+   <addaction name="M_build"/>
+   <addaction name="M_tools"/>
+   <addaction name="M_help"/>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+  <action name="A_new">
+   <property name="text">
+    <string>新建(&amp;N)</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+N</string>
+   </property>
+  </action>
+  <action name="A_open">
+   <property name="text">
+    <string>打开(&amp;O)...</string>
+   </property>
+   <property name="toolTip">
+    <string>打开</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+O</string>
+   </property>
+  </action>
+  <action name="A_save">
+   <property name="text">
+    <string>保存(&amp;S)</string>
+   </property>
+   <property name="toolTip">
+    <string>保存</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+S</string>
+   </property>
+  </action>
+  <action name="A_saveas">
+   <property name="text">
+    <string>另存为(&amp;A)...</string>
+   </property>
+   <property name="toolTip">
+    <string>另存为</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Shift+S</string>
+   </property>
+  </action>
+  <action name="A_quit">
+   <property name="text">
+    <string>退出(&amp;X)</string>
+   </property>
+   <property name="toolTip">
+    <string>退出</string>
+   </property>
+  </action>
+  <action name="A_undo">
+   <property name="text">
+    <string>撤销(&amp;U)</string>
+   </property>
+   <property name="toolTip">
+    <string>撤销</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Z</string>
+   </property>
+  </action>
+  <action name="A_redo">
+   <property name="text">
+    <string>重做(&amp;R)</string>
+   </property>
+   <property name="toolTip">
+    <string>重做</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Y</string>
+   </property>
+  </action>
+  <action name="A_cut">
+   <property name="text">
+    <string>剪切(&amp;T)</string>
+   </property>
+   <property name="toolTip">
+    <string>剪切</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+X</string>
+   </property>
+  </action>
+  <action name="A_copy">
+   <property name="text">
+    <string>复制(C&amp;)</string>
+   </property>
+   <property name="toolTip">
+    <string>复制</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+C</string>
+   </property>
+  </action>
+  <action name="A_paste">
+   <property name="text">
+    <string>粘贴(&amp;P)</string>
+   </property>
+   <property name="toolTip">
+    <string>粘贴</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+V</string>
+   </property>
+  </action>
+  <action name="A_all">
+   <property name="text">
+    <string>全选(&amp;A)</string>
+   </property>
+   <property name="toolTip">
+    <string>全选</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+A</string>
+   </property>
+  </action>
+  <action name="A_run">
+   <property name="text">
+    <string>运行(&amp;R)</string>
+   </property>
+   <property name="toolTip">
+    <string>运行</string>
+   </property>
+   <property name="shortcut">
+    <string>F5</string>
+   </property>
+  </action>
+  <action name="A_compile">
+   <property name="text">
+    <string>编译为PYC文件(&amp;C)</string>
+   </property>
+   <property name="toolTip">
+    <string>编译为PYC文件</string>
+   </property>
+   <property name="shortcut">
+    <string>F7</string>
+   </property>
+  </action>
+  <action name="A_pack">
+   <property name="text">
+    <string>打包成EXE文件(&amp;P)</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+F7</string>
+   </property>
+  </action>
+  <action name="A_content">
+   <property name="checkable">
+    <bool>false</bool>
+   </property>
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>本节课的学习内容(&amp;C)</string>
+   </property>
+   <property name="toolTip">
+    <string>本节课的学习内容</string>
+   </property>
+  </action>
+  <action name="A_task">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>任务内容(&amp;T)</string>
+   </property>
+   <property name="toolTip">
+    <string>任务内容</string>
+   </property>
+  </action>
+  <action name="A_work">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>提交作业(&amp;U)</string>
+   </property>
+   <property name="toolTip">
+    <string>提交作业</string>
+   </property>
+  </action>
+  <action name="A_add_tools">
+   <property name="text">
+    <string>添加工具(&amp;A)...</string>
+   </property>
+   <property name="toolTip">
+    <string>添加工具</string>
+   </property>
+  </action>
+  <action name="A_pydoc">
+   <property name="text">
+    <string>Python文档(&amp;H)</string>
+   </property>
+   <property name="toolTip">
+    <string>Python文档</string>
+   </property>
+   <property name="shortcut">
+    <string>F1</string>
+   </property>
+  </action>
+  <action name="A_help">
+   <property name="text">
+    <string>软件帮助(&amp;S)</string>
+   </property>
+   <property name="toolTip">
+    <string>软件帮助</string>
+   </property>
+  </action>
+  <action name="A_about">
+   <property name="text">
+    <string>关于 Sail Python Editor(&amp;A)</string>
+   </property>
+   <property name="toolTip">
+    <string>关于 Sail Python Editor</string>
+   </property>
+  </action>
+  <action name="A_set">
+   <property name="text">
+    <string>首选项(&amp;S)</string>
+   </property>
+   <property name="toolTip">
+    <string>首选项</string>
+   </property>
+  </action>
+  <action name="A_del">
+   <property name="text">
+    <string>删除(&amp;L)</string>
+   </property>
+   <property name="toolTip">
+    <string>删除</string>
+   </property>
+   <property name="shortcut">
+    <string>Del</string>
+   </property>
+  </action>
+  <action name="A_wrap">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>自动换行(&amp;W)</string>
+   </property>
+   <property name="toolTip">
+    <string>自动换行</string>
+   </property>
+  </action>
+  <action name="A_p">
+   <property name="text">
+    <string>放大视图(&amp;I)</string>
+   </property>
+   <property name="toolTip">
+    <string>放大视图</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+=</string>
+   </property>
+  </action>
+  <action name="A_m">
+   <property name="text">
+    <string>缩小视图(&amp;O)</string>
+   </property>
+   <property name="toolTip">
+    <string>缩小视图</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+-</string>
+   </property>
+  </action>
+  <action name="A_font">
+   <property name="text">
+    <string>字体(&amp;F)...</string>
+   </property>
+   <property name="toolTip">
+    <string>字体</string>
+   </property>
+  </action>
+  <action name="A_rest">
+   <property name="text">
+    <string>还原视图</string>
+   </property>
+   <property name="toolTip">
+    <string>还原视图</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+0</string>
+   </property>
+  </action>
+  <action name="A_add_plugin">
+   <property name="text">
+    <string>添加插件(&amp;P)...</string>
+   </property>
+  </action>
+  <action name="A_info_bar">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>调试输出</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
