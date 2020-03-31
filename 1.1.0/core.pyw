@@ -12,9 +12,7 @@ import GUI
 import copy
 import tempfile
 import debug
-import threading
 import time
-from pathlib import Path
 from PyQt5 import QtCore
 from PyQt5 import QtWidgets
 from PyQt5 import QtGui
@@ -37,9 +35,14 @@ class core(GUI.mainWin):
 
     def init_os(self):
         if self.os == 'win32':
-            self.tmp = os.environ['temp']
+            self.tmp = '%s/SailPYE/' % os.environ['temp']
         elif self.os == 'linux':
-            self.tmp = '/tmp'
+            self.tmp = '/tmp/SailPYE/'
+
+    def temp_file(self,suffix=''):
+        if suffix == '':
+            return tempfile.mktemp(dir=self.tmp)
+        return tempfile.mktemp(dir=self.tmp,suffix=suffix)
 
     def setConnect(self):
         '''绑定槽'''
@@ -176,13 +179,13 @@ class core(GUI.mainWin):
         self.debuger = debug.Debug(self.os, self.textEdit, self.tmp)
 
         # 建立临时文件夹作为工作目录
-        if not Path('%s/SailPYE/' % self.tmp).is_dir():
-            os.mkdir('%s/SailPYE/' % self.tmp)
+        if not Path(self.tmp).is_dir():
+            os.mkdir(self.tmp)
 
         if self.file_name == '':
             # 如果是作为临时文件运行
             temp_file = open(tempfile.mktemp(
-                dir='%s/SailPYE/' % self.tmp, suffix='.py'),
+                dir=self.tmp, suffix='.py'),
                 encoding='UTF-8', mode='w')
             temp_file.write(self.editor.text())
             temp_file.close()

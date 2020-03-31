@@ -47,7 +47,7 @@ class Debug(object):
     def start(self, name):
 
         # 准备错误输出文件
-        error_file = tempfile.mktemp(dir='%s/SailPYE' % self.tmp)
+        error_file = tempfile.mktemp(dir=self.tmp)
         with open(error_file, 'w+') as f:
             ...
         # 用时间戳作为验证码
@@ -55,7 +55,7 @@ class Debug(object):
 
         # 准备启动器
         self.launcher = tempfile.mktemp(
-            dir='%s/SailPYE' % self.tmp, suffix='.py')
+            dir=self.tmp, suffix='.py')
         with open(self.launcher, 'w', encoding='UTF-8') as f:
             f.write('port = %d\n' % self.start_server())
             f.write('key = %d\n' % self.key)
