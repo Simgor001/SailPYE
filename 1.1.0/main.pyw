@@ -22,7 +22,7 @@ def main():
         SailPYE.os = 'win32'
     SailPYE.init_os()
     print('正在启动插件...')
-    plugin = setPlugin.plugin(core, app)
+    plugin = setPlugin.plugin(core, app,verstion)
     error_info = plugin.install()
     error_widget = QtWidgets.QMessageBox(
         QtWidgets.QMessageBox.Critical, '错误', error_info)

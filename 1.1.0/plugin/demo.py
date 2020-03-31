@@ -1,4 +1,5 @@
 '''标准Sial Python Editor插件模板'''
+import core
 from PyQt5 import QtGui
 from PyQt5 import QtWidgets
 from PyQt5 import QtCore
@@ -6,7 +7,6 @@ import os
 import sys
 import time
 sys.path.append("..")
-import core
 '''如果有需要用到到某个主模块，可以把注释去掉。'''
 #import config
 #import GUI
@@ -25,7 +25,7 @@ _core: core.core = object()
 _app: QtWidgets.QApplication = object()
 
 
-def init(sailpye, app):
+def init(sailpye, app, verstion):
     '''每个插件必须有一个init函数，该函数于show函数之前调用'''
     _core = sailpye
     _app = app
@@ -42,4 +42,3 @@ def show_init():
     如果需要用到这个函数，请在init函数中返回True
     '''
     ...
-    
