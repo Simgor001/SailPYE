@@ -30,10 +30,16 @@ class core(GUI.mainWin):
         self.file_name: str = ''
 
         self.os = 'linux'
-        self.win32_tmp = os.environ['temp']
+
         self.tool_dict: dict = dict()
         self.tool_update = False
         self.debuger = object()
+
+    def init_os(self):
+        if self.os == 'win32':
+            self.tmp = os.environ['temp']
+        elif self.os == 'linux':
+            self.tmp = '/tmp'
 
     def setConnect(self):
         '''绑定槽'''
@@ -53,7 +59,6 @@ class core(GUI.mainWin):
         self.A_info_bar.triggered.connect(self.info_bar)
         self.A_run.triggered.connect(self.run)
         self.A_add_tools.triggered.connect(self.add_tool)
-        self.A_add_plugin.triggered.connect(self.add_plugin)
         self.A_pydoc.triggered.connect(self.pydoc)
         self.A_help.triggered.connect(self.app_help)
         self.A_about.triggered.connect(self.about)
@@ -104,7 +109,6 @@ class core(GUI.mainWin):
         self.editor.setModified(False)
 
     def save_file(self):
-        print(sys._getframe().f_code.co_name)
         self.check_save(True)
 
     def save_as_file(self):
@@ -156,45 +160,44 @@ class core(GUI.mainWin):
 
     def run(self):
         """运行Python脚本"""
+        # 把运行键停用，避免多次运行
+        self.A_run.setEnabled(False)
+
+        # 调出输出栏
         if not self.A_info_bar.isChecked():
             self.dockWidget.setVisible(True)
             self.A_info_bar.toggle()
         self.dockWidget.repaint()
         self.repaint()
-        error = ''
         self.textEdit.setText('')
-        if self.os == 'win32':
-            self.debuger = debug.Debug(self.os, self.textEdit, self.win32_tmp)
-            if not Path('%s/SailPYE/' % self.win32_tmp).is_dir():
-                os.mkdir('%s/SailPYE/' % self.win32_tmp)
-            if self.file_name == '':
-                temp_file = open(tempfile.mktemp(
-                    dir='%s/SailPYE/' % self.win32_tmp, suffix='.py'),
-                    encoding='UTF-8', mode='w')
-                temp_file.write(self.editor.text())
-                temp_file.close()
-                error = self.debuger.start(temp_file.name)
-                os.remove(temp_file.name)
-            else:
-                error = self.debuger.start(self.file_name)
 
-        elif self.os == 'linux':
-            self.debuger = debug.Debug(self.os, self.textEdit, '/tmp')
-            if not Path('/tmp/SailPYE/').is_dir():
-                os.mkdir('/tmp/SailPYE/')
-            if self.file_name == '':
-                temp_file = open(tempfile.mkstemp(
-                    dir='/tmp/SailPYE/', suffix='.py')[1],
-                    encoding='UTF-8', mode='w')
-                temp_file.write(self.editor.text())
-                temp_file.close()
-                error = self.debuger.start(temp_file.name)
-                os.remove(temp_file.name)
-            else:
-                error = self.debuger.start(self.file_name)
+        error = ''
+
+        self.debuger = debug.Debug(self.os, self.textEdit, self.tmp)
+
+        # 建立临时文件夹作为工作目录
+        if not Path('%s/SailPYE/' % self.tmp).is_dir():
+            os.mkdir('%s/SailPYE/' % self.tmp)
+
+        if self.file_name == '':
+            # 如果是作为临时文件运行
+            temp_file = open(tempfile.mktemp(
+                dir='%s/SailPYE/' % self.tmp, suffix='.py'),
+                encoding='UTF-8', mode='w')
+            temp_file.write(self.editor.text())
+            temp_file.close()
+            error = self.debuger.start(temp_file.name)
+            os.remove(temp_file.name)
+        else:
+            # 如果是打开的文件，那么运行之前会保存一遍
+            self.save_file()
+            error = self.debuger.start(self.file_name)
+
         self.add_log('调试完毕！')
         if error:
             self.add_log(error)
+
+        self.A_run.setEnabled(True)
 
     def add_log(self, text):
         self.textEdit.append(text)
@@ -206,9 +209,6 @@ class core(GUI.mainWin):
         tools_win.show()
         tools_win.exec()
         self.update_tools()
-
-    def add_plugin(self):
-        print(sys._getframe().f_code.co_name)
 
     def app_help(self):
         print(sys._getframe().f_code.co_name)
@@ -232,6 +232,7 @@ class core(GUI.mainWin):
             if not is_save:
                 # 寻问是否需要保存
                 opinion = saveMessageBox(self).get_opinion()
+
         if opinion == 0 and self.editor.text() != '' or is_save == True:
             # 选择保存
             if self.file_name == '' or save_as:

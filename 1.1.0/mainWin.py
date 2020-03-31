@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'e:\SailPYE-EDU\3-22\mainWin.ui'
+# Form implementation generated from reading ui file 'e:\SailPYE\1.1.0\mainWin.ui'
 #
 # Created by: PyQt5 UI code generator 5.14.1
 #
@@ -33,8 +33,6 @@ class Ui_MainWindow(object):
         self.M_help.setObjectName("M_help")
         self.M_view = QtWidgets.QMenu(self.menubar)
         self.M_view.setObjectName("M_view")
-        self.M_task = QtWidgets.QMenu(self.menubar)
-        self.M_task.setObjectName("M_task")
         MainWindow.setMenuBar(self.menubar)
         self.statusBar = QtWidgets.QStatusBar(MainWindow)
         self.statusBar.setObjectName("statusBar")
@@ -131,12 +129,9 @@ class Ui_MainWindow(object):
         self.M_help.addAction(self.A_about)
         self.M_view.addAction(self.A_wrap)
         self.M_view.addAction(self.A_info_bar)
-        self.M_task.addAction(self.A_task)
-        self.M_task.addAction(self.A_work)
         self.menubar.addAction(self.M_file.menuAction())
         self.menubar.addAction(self.M_edit.menuAction())
         self.menubar.addAction(self.M_view.menuAction())
-        self.menubar.addAction(self.M_task.menuAction())
         self.menubar.addAction(self.M_build.menuAction())
         self.menubar.addAction(self.M_tools.menuAction())
         self.menubar.addAction(self.M_help.menuAction())
@@ -153,7 +148,6 @@ class Ui_MainWindow(object):
         self.M_tools.setTitle(_translate("MainWindow", "工具(&T)"))
         self.M_help.setTitle(_translate("MainWindow", "帮助(&H)"))
         self.M_view.setTitle(_translate("MainWindow", "视图(&V)"))
-        self.M_task.setTitle(_translate("MainWindow", "任务(&S)"))
         self.A_new.setText(_translate("MainWindow", "新建(&N)"))
         self.A_new.setShortcut(_translate("MainWindow", "Ctrl+N"))
         self.A_open.setText(_translate("MainWindow", "打开(&O)..."))

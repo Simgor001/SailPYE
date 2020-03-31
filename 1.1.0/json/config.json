@@ -9,7 +9,7 @@
             "name": "python3 控制台",
             "shortcut": "",
             "command": {
-                "win32": "start python3",
+                "win32": "start python",
                 "linux": "gnome-terminal -e python3"
             }
         },

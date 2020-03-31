@@ -6,7 +6,7 @@
     "language": "Python",
     "theme": {
         "default": [
-            "#d7dae0",
+            "#AAAAc5",
             "#282c34",
             "WenQuanYi Micro Hei Mono",
             18,
@@ -14,15 +14,15 @@
             false
         ],
         "comment": [
-            "#A9A9A9",
+            "#999999",
             "#282c34",
             "WenQuanYi Micro Hei Mono",
             18,
             false,
-            false
+            true
         ],
         "number": [
-            "#FFE4B5",
+            "#D19A66",
             "#282c34",
             "WenQuanYi Micro Hei Mono",
             18,
@@ -54,7 +54,7 @@
             false
         ],
         "tripleSingleQuotedString": [
-            "#A9A9A9",
+            "#999999",
             "#282c34",
             "WenQuanYi Micro Hei Mono",
             18,
@@ -62,7 +62,7 @@
             false
         ],
         "tripleDoubleQuotedString": [
-            "#A9A9A9",
+            "#999999",
             "#282c34",
             "WenQuanYi Micro Hei Mono",
             18,
@@ -70,7 +70,7 @@
             false
         ],
         "className": [
-            "#F0E68C",
+            "#E5C07B",
             "#282c34",
             "WenQuanYi Micro Hei Mono",
             18,
@@ -86,7 +86,7 @@
             false
         ],
         "operator": [
-            "#d7dae0",
+            "#BBBBc5",
             "#282c34",
             "WenQuanYi Micro Hei Mono",
             18,
@@ -94,7 +94,7 @@
             false
         ],
         "identifier": [
-            "#d7dae0",
+            "#BBBBc5",
             "#282c34",
             "WenQuanYi Micro Hei Mono",
             18,
@@ -102,7 +102,7 @@
             false
         ],
         "commentBlock": [
-            "#A9A9A9",
+            "#999999",
             "#282c34",
             "WenQuanYi Micro Hei Mono",
             18,
@@ -118,7 +118,7 @@
             false
         ],
         "highlightedIdentifier": [
-            "#d7dae0",
+            "#BBBBc5",
             "#282c34",
             "WenQuanYi Micro Hei Mono",
             18,
@@ -150,7 +150,7 @@
             false
         ],
         "tripleSingleQuotedFString": [
-            "#A9A9A9",
+            "#999999",
             "#282c34",
             "WenQuanYi Micro Hei Mono",
             18,
@@ -158,7 +158,7 @@
             false
         ],
         "tripleDoubleQuotedFString": [
-            "#A9A9A9",
+            "#999999",
             "#282c34",
             "WenQuanYi Micro Hei Mono",
             18,
@@ -167,7 +167,7 @@
         ]
     },
     "outText": [
-        "#A9A9A9",
+        "#999999",
         "#282c34",
         "WenQuanYi Micro Hei Mono",
         12,
@@ -178,11 +178,11 @@
         "cursorColor": "#528bff",
         "cursorLineColor": "#2c313c",
         "dockBarBackgroundColor": "#282c34",
-        "dockBarForegroundColor": "#A9A9A9",
+        "dockBarForegroundColor": "#999999",
         "marginsBackgroundColor": "#282c34",
         "marginsForegroundColor": "#636d83",
         "statusBarBackgroundColor": "#21252b",
-        "statusBarForegroundColor": "#A9A9A9",
+        "statusBarForegroundColor": "#999999",
         "selectionBackgroundColor": "#404859",
         "indentationGuidesForegroundColor": "#636d83",
         "indentationGuidesBackgroundColor": "#636d83",

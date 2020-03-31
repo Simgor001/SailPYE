@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'c:\Users\simgor\Desktop\SailPYE\aboutWin.ui'
+# Form implementation generated from reading ui file 'e:\SailPYE\1.1.0\aboutWin.ui'
 #
 # Created by: PyQt5 UI code generator 5.14.1
 #
@@ -58,7 +58,7 @@ class Ui_aboutWin(object):
         self.label_3.setWordWrap(True)
         self.label_3.setObjectName("label_3")
         self.label_4 = QtWidgets.QLabel(aboutWin)
-        self.label_4.setGeometry(QtCore.QRect(260, 92, 161, 40))
+        self.label_4.setGeometry(QtCore.QRect(250, 90, 181, 40))
         font = QtGui.QFont()
         font.setFamily("文泉驿微米黑")
         font.setPointSize(13)
@@ -114,8 +114,8 @@ class Ui_aboutWin(object):
         _translate = QtCore.QCoreApplication.translate
         aboutWin.setWindowTitle(_translate("aboutWin", "关于Sail Python Editor"))
         self.label.setText(_translate("aboutWin", "Sail Python Editor"))
-        self.label_3.setText(_translate("aboutWin", "Sail Python Editor 是一款开源、简洁的Python源代码编辑器，教育版为精简功能版。"))
-        self.label_4.setText(_translate("aboutWin", "EDU 教育版 rev1.0.0"))
+        self.label_3.setText(_translate("aboutWin", "Sail Python Editor 是一款开源、简洁的Python源代码编辑器。"))
+        self.label_4.setText(_translate("aboutWin", "基本功能版 Version1.0.0"))
         self.label_5.setText(_translate("aboutWin", "Sail Python Editor是自由软件，基于GUN GPL2.0开源许可协议发布,意味着您可以自由运行、复制、分发、修改并且改进这款软件；本计算机程序受著作权法和国际公约的保护，并且本软件不提供任何形式的担保，使用时请严格遵守当地法律规章制度。"))
         self.label_7.setText(_translate("aboutWin", "<html><head/><body><p>作者：某不明生物</p></body></html>"))
         self.label_8.setText(_translate("aboutWin", "<html><head/><body><p>维护：化州市第一中学信息技术协会</p></body></html>"))

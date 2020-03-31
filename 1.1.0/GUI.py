@@ -64,6 +64,9 @@ class mainWin(QtWidgets.QMainWindow, Ui_MainWindow):
         # 设置utf-8编码
         self.editor.setUtf8(True)
 
+        #设置行尾模式为unix模式
+        self.editor.setEolMode(Qsci.QsciScintilla.EolUnix)
+
         # 设置缩放
         self.editor.zoomTo(self.config.zoom)
 
@@ -129,6 +132,8 @@ class mainWin(QtWidgets.QMainWindow, Ui_MainWindow):
         self.dockWidget.setWidget(self.textEdit)
         palette = QtGui.QPalette()
 
+        
+
         palette.setBrush(palette.Background,
                          QtGui.QColor(self.config.theme['other']
                                       ['dockBarBackgroundColor']))
@@ -151,6 +156,10 @@ class mainWin(QtWidgets.QMainWindow, Ui_MainWindow):
         self.textEdit.setReadOnly(True)
 
         self.textEdit.textChanged.connect(self.auto_scroll)
+
+        #去掉焦点框
+        self.textEdit.setFrameShape(QtWidgets.QFrame.NoFrame)
+        
 
     def auto_scroll(self):
         self.textEdit.moveCursor(QtGui.QTextCursor.End)

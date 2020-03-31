@@ -85,17 +85,9 @@
     <addaction name="A_wrap"/>
     <addaction name="A_info_bar"/>
    </widget>
-   <widget class="QMenu" name="M_task">
-    <property name="title">
-     <string>任务(&amp;S)</string>
-    </property>
-    <addaction name="A_task"/>
-    <addaction name="A_work"/>
-   </widget>
    <addaction name="M_file"/>
    <addaction name="M_edit"/>
    <addaction name="M_view"/>
-   <addaction name="M_task"/>
    <addaction name="M_build"/>
    <addaction name="M_tools"/>
    <addaction name="M_help"/>

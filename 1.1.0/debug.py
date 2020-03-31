@@ -67,7 +67,7 @@ class Debug(object):
         # 启动脚本
         self.add_log('正在启动...')
         if self.os == 'win32':
-            os.system('cmd /c start "%s" python %s' % (name, self.launcher))
+            os.system('cmd /c start "%s" /b python %s' % (name, self.launcher))
         elif self.os == 'linux':
             os.system('gnome-terminal -x sh python ' + self.launcher)
         self.add_log('启动成功！')
@@ -127,10 +127,8 @@ class Debug(object):
         return self.find_error(error_file)
 
     def find_error(self, error_file):
-        if self.os == 'win32':
-            errorf = open(error_file, 'r', encoding='GBK')
-        elif self.os == 'linux':
-            errorf = open(error_file, 'r', encoding='UTF-8')
+
+        errorf = open(error_file, 'r', encoding='UTF-8')
         error = errorf.read()
         errorf.close()
         os.remove(error_file)
