@@ -8,12 +8,11 @@ from PyQt5 import QtCore
 from PyQt5 import QtWidgets
 from PyQt5 import QtGui
 from pathlib import Path
-verstion = '1.1.0'
-plugin = object()
-
+verstion = '0.1.0'
 
 def main():
     app = QtWidgets.QApplication(sys.argv)
+    
     app.setWindowIcon(QtGui.QIcon('img/logo.png'))
     app.setAttribute(QtCore.Qt.AA_DisableWindowContextHelpButton)
     print('正在启动...')
@@ -30,7 +29,7 @@ def main():
         os.mkdir(SailPYE.tmp)
 
     print('正在启动插件...')
-    plugin = setPlugin.plugin(core, app, verstion)
+    plugin = setPlugin.plugin(SailPYE, app, verstion)
 
     error_info = plugin.install()
     error_widget = QtWidgets.QMessageBox(
@@ -45,7 +44,7 @@ def main():
 
     if len(sys.argv) > 1:
         SailPYE.open_file(sys.argv[1])
-
+    
     SailPYE.show()
 
     print('启动成功！')

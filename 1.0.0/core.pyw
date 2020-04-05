@@ -24,7 +24,7 @@ from PyQt5 import Qsci
 
 class core(GUI.mainWin):
     def __init__(self):
-        super(core, self).__init__()
+        super().__init__()
         self.is_save = True
         self.setConnect()
 
@@ -317,7 +317,7 @@ class saveMessageBox(QtWidgets.QMessageBox):
     """生成一个保存提问窗口"""
 
     def __init__(self, w):
-        super(QtWidgets.QMessageBox, self).__init__(w)
+        super().__init__(w)
         self.setIcon(QtWidgets.QMessageBox.Question)
         self.setWindowTitle('保存')
         self.setText('<font size = "5">是否保存已更改的内容？</font>')

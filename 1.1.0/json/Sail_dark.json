@@ -30,7 +30,7 @@
             false
         ],
         "doubleQuotedString": [
-            "#FFA07A",
+            "#CDC673",
             "#282c34",
             "WenQuanYi Micro Hei Mono",
             18,
@@ -38,7 +38,7 @@
             false
         ],
         "singleQuotedString": [
-            "#FFA07A",
+            "#CDC673",
             "#282c34",
             "WenQuanYi Micro Hei Mono",
             18,
@@ -78,7 +78,7 @@
             false
         ],
         "functionMethodName": [
-            "#40E0D0",
+            "#87CEFA",
             "#282c34",
             "WenQuanYi Micro Hei Mono",
             18,
@@ -118,7 +118,7 @@
             false
         ],
         "highlightedIdentifier": [
-            "#BBBBc5",
+            "#40E0D0",
             "#282c34",
             "WenQuanYi Micro Hei Mono",
             18,
@@ -134,7 +134,7 @@
             false
         ],
         "doubleQuotedFString": [
-            "#FFA07A",
+            "#CDC673",
             "#282c34",
             "WenQuanYi Micro Hei Mono",
             18,
@@ -142,7 +142,7 @@
             false
         ],
         "singleQuotedFString": [
-            "#FFA07A",
+            "#CDC673",
             "#282c34",
             "WenQuanYi Micro Hei Mono",
             18,
@@ -159,6 +159,14 @@
         ],
         "tripleDoubleQuotedFString": [
             "#999999",
+            "#282c34",
+            "WenQuanYi Micro Hei Mono",
+            18,
+            false,
+            false
+        ],
+        "otherIdentifier": [
+            "#FFFFFF",
             "#282c34",
             "WenQuanYi Micro Hei Mono",
             18,

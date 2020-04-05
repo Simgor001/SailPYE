@@ -1,6 +1,7 @@
 import sys
 import json
 import os
+import lexer
 from PyQt5 import QtCore
 from PyQt5 import QtWidgets
 from PyQt5 import QtGui
@@ -13,7 +14,7 @@ class Config(object):
         self.parent = parent
         self.file_list = [
             'main.pyw',
-            'core.pyw',
+            'core.py',
             'GUI.py',
             'config.py',
             'mainWin.py',
@@ -26,30 +27,8 @@ class Config(object):
         self.config_file: str = 'json/config.json'
         self.load_config()
 
-        self.lexer = Qsci.QsciLexerPython(editor)
-        # 这个是风格列表，切记不可以改变顺序
-        self.styles = [
-            "default",
-            "comment",
-            "number",
-            "doubleQuotedString",
-            "singleQuotedString",
-            "keyword",
-            "tripleSingleQuotedString",
-            "tripleDoubleQuotedString",
-            "className",
-            "functionMethodName",
-            "operator",
-            "identifier",
-            "commentBlock",
-            "unclosedString",
-            "highlightedIdentifier",
-            "decorator",
-            "doubleQuotedFString",
-            "singleQuotedFString",
-            "tripleSingleQuotedFString",
-            "tripleDoubleQuotedFString"
-        ]
+        self.lexer = lexer.lexer(editor)
+        
         self.set_lexer()
 
     def cheak_file_integrity(self):
@@ -88,8 +67,8 @@ class Config(object):
         self.lexer.setDefaultColor(
             QtGui.QColor(self.theme['theme']['default'][0]))
 
-        for i in range(len(self.styles)):
-            styles = self.theme['theme'][self.styles[i]]
+        for i in range(len(self.lexer.styles)):
+            styles = self.theme['theme'][self.lexer.styles[i]]
             self.lexer.setColor(QtGui.QColor(styles[0]), i)
             self.lexer.setPaper(QtGui.QColor(styles[1]), i)
             font = QtGui.QFont(styles[2], styles[3])

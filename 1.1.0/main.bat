@@ -1,2 +1,2 @@
-start pythonw "%ProgramFiles%\SailPYE-EDU\main.pyw"
+start pythonw "main.pyw"
 exit

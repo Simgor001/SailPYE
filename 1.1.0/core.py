@@ -13,6 +13,7 @@ import copy
 import tempfile
 import debug
 import time
+from pathlib import Path
 from PyQt5 import QtCore
 from PyQt5 import QtWidgets
 from PyQt5 import QtGui
@@ -21,7 +22,7 @@ from PyQt5 import Qsci
 
 class core(GUI.mainWin):
     def __init__(self):
-        super(core, self).__init__()
+        super().__init__()
         self.is_save = True
         self.setConnect()
 
@@ -65,6 +66,7 @@ class core(GUI.mainWin):
         self.A_pydoc.triggered.connect(self.pydoc)
         self.A_help.triggered.connect(self.app_help)
         self.A_about.triggered.connect(self.about)
+        self.A_aboutQT.triggered.connect(QtWidgets.QApplication.aboutQt)
 
         self.editor.cursorPositionChanged.connect(self.update_status)
         self.editor.marginClicked.connect(self.set_break)
@@ -320,7 +322,7 @@ class saveMessageBox(QtWidgets.QMessageBox):
     """生成一个保存提问窗口"""
 
     def __init__(self, w):
-        super(QtWidgets.QMessageBox, self).__init__(w)
+        super().__init__(w)
         self.setIcon(QtWidgets.QMessageBox.Question)
         self.setWindowTitle('保存')
         self.setText('<font size = "5">是否保存已更改的内容？</font>')

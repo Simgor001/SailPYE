@@ -77,6 +77,7 @@
     <addaction name="A_help"/>
     <addaction name="separator"/>
     <addaction name="A_about"/>
+    <addaction name="A_aboutQT"/>
    </widget>
    <widget class="QMenu" name="M_view">
     <property name="title">
@@ -391,6 +392,11 @@
    </property>
    <property name="text">
     <string>调试输出</string>
+   </property>
+  </action>
+  <action name="A_aboutQT">
+   <property name="text">
+    <string>关于 QT</string>
    </property>
   </action>
  </widget>

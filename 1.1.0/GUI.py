@@ -1,12 +1,3 @@
-#!/usr/bin/python3
-# -*- coding: utf-8 -*-
-# @Author: 某不明生物
-# @since: 2020-02-22 19:27
-# @lastTime: 2020-02-26 17:56
-# @FilePath: /SailPYE/GUI.py
-# @Description:
-
-
 from config import Config
 from PyQt5 import QtCore
 from PyQt5 import QtWidgets
@@ -20,14 +11,14 @@ from toolsWin import Ui_toolsWin
 class mainWin(QtWidgets.QMainWindow, Ui_MainWindow):
 
     def __init__(self):
-        super(QtWidgets.QMainWindow, self).__init__()
+        super().__init__()
 
         self.setupUi(self)
         self.set_editor()
         self.set_info_bar()
 
     def setupUi(self, MainWindow):
-        super(mainWin, self).setupUi(self)
+        super().setupUi(self)
         self.setWindowTitle('Sail Pyton Editor')
 
         self.editor = Qsci.QsciScintilla(self)
@@ -60,11 +51,10 @@ class mainWin(QtWidgets.QMainWindow, Ui_MainWindow):
     def set_editor(self):
         # 设置词法分析器
         self.editor.setLexer(self.config.lexer)
-
         # 设置utf-8编码
         self.editor.setUtf8(True)
 
-        #设置行尾模式为unix模式
+        # 设置行尾模式为unix模式
         self.editor.setEolMode(Qsci.QsciScintilla.EolUnix)
 
         # 设置缩放
@@ -132,8 +122,6 @@ class mainWin(QtWidgets.QMainWindow, Ui_MainWindow):
         self.dockWidget.setWidget(self.textEdit)
         palette = QtGui.QPalette()
 
-        
-
         palette.setBrush(palette.Background,
                          QtGui.QColor(self.config.theme['other']
                                       ['dockBarBackgroundColor']))
@@ -157,9 +145,8 @@ class mainWin(QtWidgets.QMainWindow, Ui_MainWindow):
 
         self.textEdit.textChanged.connect(self.auto_scroll)
 
-        #去掉焦点框
+        # 去掉焦点框
         self.textEdit.setFrameShape(QtWidgets.QFrame.NoFrame)
-        
 
     def auto_scroll(self):
         self.textEdit.moveCursor(QtGui.QTextCursor.End)
@@ -167,7 +154,7 @@ class mainWin(QtWidgets.QMainWindow, Ui_MainWindow):
 
 class aboutWin(QtWidgets.QDialog, Ui_aboutWin):
     def __init__(self, parent):
-        super(QtWidgets.QDialog, self).__init__(parent)
+        super().__init__(parent)
         self.setupUi(self)
 
         pix = QtGui.QPixmap('img/logo.png')
@@ -181,7 +168,7 @@ class aboutWin(QtWidgets.QDialog, Ui_aboutWin):
 
 class toolsWin(QtWidgets.QDialog, Ui_toolsWin):
     def __init__(self, parent, config, keys):
-        super(QtWidgets.QDialog, self).__init__(parent)
+        super().__init__(parent)
         self.setupUi(self)
         self.config: Config = config
         self.keys = keys
@@ -217,7 +204,7 @@ class toolsWin(QtWidgets.QDialog, Ui_toolsWin):
 
 class dockWidget(QtWidgets.QDockWidget):
     def __init__(self, title, parent):
-        super(QtWidgets.QDockWidget, self).__init__(title, parent)
+        super().__init__(title, parent)
         self.parent = parent
         self.setVisible(False)
 

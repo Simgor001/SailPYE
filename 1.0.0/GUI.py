@@ -20,7 +20,7 @@ from toolsWin import Ui_toolsWin
 class mainWin(QtWidgets.QMainWindow, Ui_MainWindow):
 
     def __init__(self):
-        super(QtWidgets.QMainWindow, self).__init__()
+        super().__init__()
 
         self.setupUi(self)
         self.set_editor()
@@ -158,7 +158,7 @@ class mainWin(QtWidgets.QMainWindow, Ui_MainWindow):
 
 class aboutWin(QtWidgets.QDialog, Ui_aboutWin):
     def __init__(self, parent):
-        super(QtWidgets.QDialog, self).__init__(parent)
+        super().__init__(parent)
         self.setupUi(self)
 
         pix = QtGui.QPixmap('img/logo.png')
@@ -171,7 +171,7 @@ class aboutWin(QtWidgets.QDialog, Ui_aboutWin):
 
 class toolsWin(QtWidgets.QDialog, Ui_toolsWin):
     def __init__(self, parent, config, keys):
-        super(QtWidgets.QDialog, self).__init__(parent)
+        super().__init__(parent)
         self.setupUi(self)
         self.config: Config = config
         self.keys = keys
@@ -206,7 +206,7 @@ class toolsWin(QtWidgets.QDialog, Ui_toolsWin):
 
 class dockWidget(QtWidgets.QDockWidget):
     def __init__(self, title, parent):
-        super(QtWidgets.QDockWidget, self).__init__(title, parent)
+        super().__init__(title, parent)
         self.parent = parent
         self.setVisible(False)
 

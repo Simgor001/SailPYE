@@ -39,6 +39,6 @@ class init(object):
         update_file = self._core.temp_file('.py')
 
         with open(update_file, 'w+', encoding='UTF-8') as f:
-            f.write(requests.get('http://sailpye.eace.top/update/%s' % ver))
+            f.write(requests.get('http://sailpye.eace.top/update/%s.py' % ver).text)
         print('正在安装更新...')
         os.system('python %s' % update_file)
