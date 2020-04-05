@@ -8,7 +8,7 @@ Sail Python Editor是一款跨平台的软件，你可以安装到任何支持�
 
 
 
-![主界面](docs\SailPYE.png)
+![主界面](http://sailpye.eace.top/SailPYE.png)
 
 ## 目录结构
 
