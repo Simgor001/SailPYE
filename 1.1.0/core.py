@@ -1,10 +1,5 @@
 #!/usr/bin/python3
 # -*- coding: utf-8 -*-
-# @Author: 某不明生物
-# @since: 2020-02-22 19:27
-# @lastTime: 2020-02-26 20:58
-# @FilePath: /SailPYE/core.pyw
-# @Description:
 
 import sys
 import os

@@ -34,6 +34,9 @@ class lexer(Qsci.QsciLexerPython, Qsci.QsciLexerCustom):
         'otherIdentifier'
     ]
 
+    keyword = keyword.kwlist
+    keyword.append('super')
+
     functions = ['abs', 'all', 'any', 'ascii', 'bin', 'bool',
                  'breakpoint', 'bytearray', 'bytes', 'callable', 'chr',
                  'classmethod', 'compile', 'complex', 'copyright',
@@ -54,7 +57,7 @@ class lexer(Qsci.QsciLexerPython, Qsci.QsciLexerCustom):
 
     def keywords(self, _set):
         if _set == 1:
-            return ' '.join(keyword.kwlist)
+            return ' '.join(self.keyword)
         elif _set == 2:
             return ' '.join(self.functions)
         else:
