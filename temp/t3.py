@@ -10,5 +10,4 @@ app = QtWidgets.QApplication(sys.argv)
 ed = Qsci.QsciScintilla()
 lp = Qsci.QsciLexerPython(ed)
 
-print(lp.wordCharacters())
-Qsci.QsciScintilla.fold
+print(lp.highlightSubidentifiers())

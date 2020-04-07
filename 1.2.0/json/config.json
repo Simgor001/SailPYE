@@ -1,0 +1,25 @@
+{
+    "type": "config",
+    "info": "这个是Sail Python Editor的配置文件",
+    "theme": "Sail_dark.json",
+    "zoom": 2,
+    "warp": true,
+    "tools": [
+        {
+            "name": "python3 控制台",
+            "shortcut": "",
+            "command": {
+                "win32": "start python",
+                "linux": "gnome-terminal -e python3"
+            }
+        },
+        {
+            "name": "系统终端",
+            "shortcut": "Ctrl+Alt+C",
+            "command": {
+                "win32": "start cmd",
+                "linux": "gnome-terminal"
+            }
+        }
+    ]
+}
