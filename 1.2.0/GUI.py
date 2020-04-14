@@ -8,6 +8,26 @@ from aboutWin import Ui_aboutWin
 from toolsWin import Ui_toolsWin
 
 
+class editor(Qsci.QsciScintilla):
+    def __init__(self, parent):
+        super().__init__(parent)
+
+    def keyPressEvent(self, event):
+        key = event.key()
+        if key == QtCore.Qt.Key_Return or key == QtCore.Qt.Key_Enter:
+            line = self.getCursorPosition()[0]
+            text = self.text(line).rstrip()
+            if len(text) > 0:
+                if text[-1] == ':':
+                    indentation = self.indentation(line)
+                    self.insert('\n')
+                    self.setIndentation(line+1, indentation + 4)
+                    self.setCursorPosition(line+1,indentation + 4)
+                    return
+        super().keyPressEvent(event)
+        
+
+
 class mainWin(QtWidgets.QMainWindow, Ui_MainWindow):
 
     def __init__(self):
@@ -21,7 +41,7 @@ class mainWin(QtWidgets.QMainWindow, Ui_MainWindow):
         super().setupUi(self)
         self.setWindowTitle('Sail Pyton Editor')
 
-        self.editor = Qsci.QsciScintilla(self)
+        self.editor = editor(self)
         self.setCentralWidget(self.editor)
 
         self.config = Config(self, self.editor)
@@ -53,6 +73,9 @@ class mainWin(QtWidgets.QMainWindow, Ui_MainWindow):
         self.editor.setLexer(self.config.lexer)
         # 设置utf-8编码
         self.editor.setUtf8(True)
+        #self.editor.SendScintilla(Qsci.QsciScintilla.SCI_SETCODEPAGE,Qsci.QsciScintilla.SC_CP_DBCS)
+        #print(self.editor.SendScintilla(Qsci.QsciScintilla.SCI_GETCODEPAGE))
+        
 
         # 设置行尾模式为unix模式
         self.editor.setEolMode(Qsci.QsciScintilla.EolUnix)

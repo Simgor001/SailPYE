@@ -17,7 +17,7 @@ def main():
     app.setAttribute(QtCore.Qt.AA_DisableWindowContextHelpButton)
     print('正在启动...')
     SailPYE = core.core()
-
+    
     if sys.platform.startswith('win'):
         ctypes.windll.shell32.SetCurrentProcessExplicitAppUserModelID(
             "Sail Python Editor")
@@ -34,7 +34,7 @@ def main():
     error_info = plugin.install()
     error_widget = QtWidgets.QMessageBox(
         QtWidgets.QMessageBox.Critical, '错误', error_info)
-
+    
     if error_info != '':
         SailPYE.close()
         error_widget.show()
@@ -56,7 +56,6 @@ def main():
     threading.Thread(target=show_init).start()
 
     sys.exit(app.exec_())
-
 
 if __name__ == "__main__":
     os.chdir(sys.argv[0] + '/../')

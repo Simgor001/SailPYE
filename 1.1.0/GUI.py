@@ -8,6 +8,81 @@ from aboutWin import Ui_aboutWin
 from toolsWin import Ui_toolsWin
 
 
+class editor(Qsci.QsciScintilla):
+    completion_p = False
+    completion_b = False
+    completion_s = False
+    completion_d = False
+
+    def __init__(self, parent):
+        super().__init__(parent)
+
+    def keyPressEvent(self, event):
+        key = event.key()
+        line = self.getCursorPosition()[0]
+        col = self.getCursorPosition()[1]
+
+        if key == QtCore.Qt.Key_ParenLeft:
+            self.insert(')')
+            self.completion_p = True
+            self.completion_b = False
+            self.completion_s = False
+            self.completion_d = False
+        elif key == QtCore.Qt.Key_ParenRight and self.completion_p:
+            self.setCursorPosition(line, col+1)
+            self.completion_p = False
+            return
+        elif key == QtCore.Qt.Key_BracketLeft:
+            self.insert(']')
+            self.completion_p = False
+            self.completion_b = True
+            self.completion_s = False
+            self.completion_d = False
+        elif key == QtCore.Qt.Key_BracketRight and self.completion_b:
+            self.setCursorPosition(line, col+1)
+            self.completion_b = False
+            return
+        elif key == QtCore.Qt.Key_QuoteDbl:
+            if self.completion_d:
+                self.completion_d = False
+                self.setCursorPosition(line, col+1)
+                return
+            else:
+                if self.hasSelectedText:
+                    text = '"'+self.selectedText()+'"'
+                    self.replaceSelectedText(text)
+                    return
+                else:
+                    self.insert('"')
+                    self.completion_p = False
+                    self.completion_b = False
+                    self.completion_s = False
+                    self.completion_d = True
+
+        elif key == QtCore.Qt.Key_Apostrophe:
+            if self.completion_s:
+                self.completion_s = False
+                self.setCursorPosition(line, col+1)
+                return
+            else:
+                if self.hasSelectedText:
+                    text = "'"+self.selectedText()+"'"
+                    self.replaceSelectedText(text)
+                    return
+                else:
+                    self.insert("'")
+                    self.completion_p = False
+                    self.completion_b = False
+                    self.completion_s = True
+                    self.completion_d = False
+        else:
+            self.completion_p = False
+            self.completion_b = False
+            self.completion_s = False
+            self.completion_d = False
+        super().keyPressEvent(event)
+
+
 class mainWin(QtWidgets.QMainWindow, Ui_MainWindow):
 
     def __init__(self):
@@ -21,7 +96,7 @@ class mainWin(QtWidgets.QMainWindow, Ui_MainWindow):
         super().setupUi(self)
         self.setWindowTitle('Sail Pyton Editor')
 
-        self.editor = Qsci.QsciScintilla(self)
+        self.editor = editor(self)
         self.setCentralWidget(self.editor)
 
         self.config = Config(self, self.editor)
@@ -60,6 +135,23 @@ class mainWin(QtWidgets.QMainWindow, Ui_MainWindow):
         # 设置缩放
         self.editor.zoomTo(self.config.zoom)
 
+        # 设置指示器颜色
+        self.editor.setIndicatorForegroundColor(QtCore.Qt.red)
+
+        # 设置括号匹配
+        self.editor.setBraceMatching(Qsci.QsciScintilla.StrictBraceMatch)
+
+        self.editor.setMatchedBraceBackgroundColor(QtGui.QColor(
+            self.config.theme['other']['matchedBraceBackgroundColor']))
+        self.editor.setMatchedBraceForegroundColor(QtGui.QColor(
+            self.config.theme['other']['matchedBraceForegroundColor']))
+
+        self.editor.setUnmatchedBraceIndicator(0)
+        self.editor.setUnmatchedBraceBackgroundColor(QtGui.QColor(
+            self.config.theme['other']['unmatchedBraceBackgroundColor']))
+        self.editor.setUnmatchedBraceForegroundColor(QtGui.QColor(
+            self.config.theme['other']['unmatchedBraceForegroundColor']))
+
         # 设置光标
         self.editor.setCaretForegroundColor(
             QtGui.QColor(self.config.theme['other']['cursorColor']))
@@ -71,7 +163,9 @@ class mainWin(QtWidgets.QMainWindow, Ui_MainWindow):
         self.editor.setSelectionBackgroundColor(
             QtGui.QColor(
                 self.config.theme['other']['selectionBackgroundColor']))
-
+        self.editor.setSelectionForegroundColor(
+            QtGui.QColor(
+                self.config.theme['other']['selectionForegroundColor']))
         # 设置旁注栏
         self.editor.setMarginsBackgroundColor(
             QtGui.QColor(self.config.theme['other']['marginsBackgroundColor']))

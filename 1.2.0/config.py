@@ -26,10 +26,7 @@ class Config(object):
 
         self.config_file: str = 'json/config.json'
         self.load_config()
-
-        self.lexer = lexer.lexer(editor)
-        
-        self.set_lexer()
+        self.lexer = lexer.lexer(editor,self.theme['theme'])
 
     def cheak_file_integrity(self):
         '''检查文件完整性

@@ -31,7 +31,6 @@ class lexer(Qsci.QsciLexerPython, Qsci.QsciLexerCustom):
         'singleQuotedFString',
         'tripleSingleQuotedFString',
         'tripleDoubleQuotedFString',
-        'otherIdentifier'
     ]
 
     keyword = keyword.kwlist
@@ -64,7 +63,7 @@ class lexer(Qsci.QsciLexerPython, Qsci.QsciLexerCustom):
             return ''
 
     def description(self, style):
-        if style < 21:
+        if style < 20:
             return self.styles[style]
         else:
             return ''

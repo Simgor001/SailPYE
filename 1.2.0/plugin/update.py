@@ -29,16 +29,18 @@ class init(object):
 
     def get_update(self):
         print('正在获取更新...')
-        
-        ver = requests.get('http://sailpye.eace.top/Version').text
-        
-        print('最新版本：%s,当前版本：%s' %(ver,self._verstion))
-        if int(self._verstion.replace('.', '')) >= int(ver.replace('.', '')):
-            return
-        print('正在更新...')
-        update_file = self._core.temp_file('.py')
+        try:
+            ver = requests.get('http://sailpye.eace.top/Version').text
+            
+            print('最新版本：%s,当前版本：%s' %(ver,self._verstion))
+            if int(self._verstion.replace('.', '')) >= int(ver.replace('.', '')):
+                return
+            print('正在更新...')
+            update_file = self._core.temp_file('.py')
 
-        with open(update_file, 'w+', encoding='UTF-8') as f:
-            f.write(requests.get('http://sailpye.eace.top/update/%s.py' % ver).text)
-        print('正在安装更新...')
-        os.system('python %s' % update_file)
+            with open(update_file, 'w+', encoding='UTF-8') as f:
+                f.write(requests.get('http://sailpye.eace.top/update/%s.py' % ver).text)
+            print('正在安装更新...')
+            os.system('python %s' % update_file)
+        except:
+            print('更新失败！')

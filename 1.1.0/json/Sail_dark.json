@@ -6,7 +6,7 @@
     "language": "Python",
     "theme": {
         "default": [
-            "#AAAAc5",
+            "#ABB2BF",
             "#282c34",
             "WenQuanYi Micro Hei Mono",
             18,
@@ -14,7 +14,7 @@
             false
         ],
         "comment": [
-            "#999999",
+            "#7F848E",
             "#282c34",
             "WenQuanYi Micro Hei Mono",
             18,
@@ -54,7 +54,7 @@
             false
         ],
         "tripleSingleQuotedString": [
-            "#999999",
+            "#7F848E",
             "#282c34",
             "WenQuanYi Micro Hei Mono",
             18,
@@ -62,7 +62,7 @@
             false
         ],
         "tripleDoubleQuotedString": [
-            "#999999",
+            "#7F848E",
             "#282c34",
             "WenQuanYi Micro Hei Mono",
             18,
@@ -102,7 +102,7 @@
             false
         ],
         "commentBlock": [
-            "#999999",
+            "#7F848E",
             "#282c34",
             "WenQuanYi Micro Hei Mono",
             18,
@@ -150,7 +150,7 @@
             false
         ],
         "tripleSingleQuotedFString": [
-            "#999999",
+            "#7F848E",
             "#282c34",
             "WenQuanYi Micro Hei Mono",
             18,
@@ -158,15 +158,7 @@
             false
         ],
         "tripleDoubleQuotedFString": [
-            "#999999",
-            "#282c34",
-            "WenQuanYi Micro Hei Mono",
-            18,
-            false,
-            false
-        ],
-        "otherIdentifier": [
-            "#FFFFFF",
+            "#7F848E",
             "#282c34",
             "WenQuanYi Micro Hei Mono",
             18,
@@ -175,7 +167,7 @@
         ]
     },
     "outText": [
-        "#999999",
+        "#7F848E",
         "#282c34",
         "WenQuanYi Micro Hei Mono",
         12,
@@ -186,15 +178,20 @@
         "cursorColor": "#528bff",
         "cursorLineColor": "#2c313c",
         "dockBarBackgroundColor": "#282c34",
-        "dockBarForegroundColor": "#999999",
+        "dockBarForegroundColor": "#7F848E",
         "marginsBackgroundColor": "#282c34",
         "marginsForegroundColor": "#636d83",
         "statusBarBackgroundColor": "#21252b",
-        "statusBarForegroundColor": "#999999",
+        "statusBarForegroundColor": "#7F848E",
         "selectionBackgroundColor": "#404859",
+        "selectionForegroundColor": "#ABB2BF",
         "indentationGuidesForegroundColor": "#636d83",
         "indentationGuidesBackgroundColor": "#636d83",
         "breakpointBackgroundColor": "#e51400",
-        "breakpointForegroundColor": "#e51400"
+        "breakpointForegroundColor": "#e51400",
+        "matchedBraceBackgroundColor": "#515A6B",
+        "matchedBraceForegroundColor":"#ABB2BF",
+        "unmatchedBraceBackgroundColor": "#282c34",
+        "unmatchedBraceForegroundColor":"#ABB2BF"
     }
 }
