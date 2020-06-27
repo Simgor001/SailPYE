@@ -1,0 +1,316 @@
+{
+  "type": "theme",
+  "name": "Sail dark",
+  "info": "Sail Python Editor的黑色主题，改自Atom的One dark pro",
+  "msg": "修改主题需要注意，样式的顺序是[前景色,背景色,字体,字体大小,粗体,斜体]",
+  "language": "Python",
+  "theme": {
+    "default": [
+      "#ABB2BF",
+      "#282c34",
+      "WenQuanYi Micro Hei Mono",
+      18,
+      false,
+      false
+    ],
+    "comment": [
+      "#7F848E",
+      "#282c34",
+      "WenQuanYi Micro Hei Mono",
+      18,
+      false,
+      true
+    ],
+    "number": [
+      "#FF8080",
+      "#282c34",
+      "WenQuanYi Micro Hei Mono",
+      18,
+      false,
+      false
+    ],
+    "doubleQuotedString": [
+      "#D69545",
+      "#282c34",
+      "WenQuanYi Micro Hei Mono",
+      18,
+      false,
+      false
+    ],
+    "singleQuotedString": [
+      "#D69545",
+      "#282c34",
+      "WenQuanYi Micro Hei Mono",
+      18,
+      false,
+      false
+    ],
+    "keyword": [
+      "#c678dd",
+      "#282c34",
+      "WenQuanYi Micro Hei Mono",
+      18,
+      false,
+      false
+    ],
+    "tripleSingleQuotedString": [
+      "#7F848E",
+      "#282c34",
+      "WenQuanYi Micro Hei Mono",
+      18,
+      false,
+      false
+    ],
+    "tripleDoubleQuotedString": [
+      "#7F848E",
+      "#282c34",
+      "WenQuanYi Micro Hei Mono",
+      18,
+      false,
+      false
+    ],
+    "className": [
+      "#E5C07B",
+      "#282c34",
+      "WenQuanYi Micro Hei Mono",
+      18,
+      false,
+      false
+    ],
+    "functionMethodName": [
+      "#61AFEF",
+      "#282c34",
+      "WenQuanYi Micro Hei Mono",
+      18,
+      false,
+      false
+    ],
+    "operator": [
+      "#BBBBc5",
+      "#282c34",
+      "WenQuanYi Micro Hei Mono",
+      18,
+      false,
+      false
+    ],
+    "identifier": [
+      "#ABB2BF",
+      "#282c34",
+      "WenQuanYi Micro Hei Mono",
+      18,
+      false,
+      false
+    ],
+    "commentBlock": [
+      "#7F848E",
+      "#282c34",
+      "WenQuanYi Micro Hei Mono",
+      18,
+      false,
+      false
+    ],
+    "unclosedString": [
+      "#CD5C5C",
+      "#282c34",
+      "WenQuanYi Micro Hei Mono",
+      18,
+      false,
+      false
+    ],
+    "highlightedIdentifier": [
+      "#40E0D0",
+      "#282c34",
+      "WenQuanYi Micro Hei Mono",
+      18,
+      false,
+      false
+    ],
+    "decorator": [
+      "#87CEFA",
+      "#282c34",
+      "WenQuanYi Micro Hei Mono",
+      18,
+      false,
+      false
+    ],
+    "doubleQuotedFString": [
+      "#D69545",
+      "#282c34",
+      "WenQuanYi Micro Hei Mono",
+      18,
+      false,
+      false
+    ],
+    "singleQuotedFString": [
+      "#D69545",
+      "#282c34",
+      "WenQuanYi Micro Hei Mono",
+      18,
+      false,
+      false
+    ],
+    "tripleSingleQuotedFString": [
+      "#7F848E",
+      "#282c34",
+      "WenQuanYi Micro Hei Mono",
+      18,
+      false,
+      false
+    ],
+    "tripleDoubleQuotedFString": [
+      "#7F848E",
+      "#282c34",
+      "WenQuanYi Micro Hei Mono",
+      18,
+      false,
+      false
+    ],
+    "json_default": [
+      "#ABB2BF",
+      "#282c34",
+      "WenQuanYi Micro Hei Mono",
+      18,
+      false,
+      false
+    ],
+    "json_number": [
+      "#FF8080",
+      "#282c34",
+      "WenQuanYi Micro Hei Mono",
+      18,
+      false,
+      false
+    ],
+    "json_string": [
+      "#D69545",
+      "#282c34",
+      "WenQuanYi Micro Hei Mono",
+      18,
+      false,
+      false
+    ],
+    "json_keyword": [
+      "#c678dd",
+      "#282c34",
+      "WenQuanYi Micro Hei Mono",
+      18,
+      false,
+      false
+    ],
+
+    "json_keywordLD": [
+      "#E5C07B",
+      "#282c34",
+      "WenQuanYi Micro Hei Mono",
+      18,
+      false,
+      false
+    ],
+    "json_operator": [
+      "#BBBBc5",
+      "#282c34",
+      "WenQuanYi Micro Hei Mono",
+      18,
+      false,
+      false
+    ],
+    "json_property": [
+      "#ABB2BF",
+      "#282c34",
+      "WenQuanYi Micro Hei Mono",
+      18,
+      false,
+      false
+    ],
+    "json_commentBlock": [
+      "#7F848E",
+      "#282c34",
+      "WenQuanYi Micro Hei Mono",
+      18,
+      false,
+      false
+    ],
+    "json_commentLine": [
+      "#7F848E",
+      "#282c34",
+      "WenQuanYi Micro Hei Mono",
+      18,
+      false,
+      false
+    ],
+    "json_unclosedString": [
+      "#CD5C5C",
+      "#282c34",
+      "WenQuanYi Micro Hei Mono",
+      18,
+      false,
+      false
+    ],
+    "json_IRI": [
+      "#40E0D0",
+      "#282c34",
+      "WenQuanYi Micro Hei Mono",
+      18,
+      false,
+      false
+    ],
+    "json_IRICompact": [
+      "#40E0D0",
+      "#282c34",
+      "WenQuanYi Micro Hei Mono",
+      18,
+      false,
+      false
+    ],
+    "json_escapeSequence": [
+      "#87CEFA",
+      "#282c34",
+      "WenQuanYi Micro Hei Mono",
+      18,
+      false,
+      false
+    ],
+    "json_error": [
+      "#CD5C5C",
+      "#282c34",
+      "WenQuanYi Micro Hei Mono",
+      18,
+      false,
+      false
+    ]
+  },
+  "outText": [
+    "#7F848E",
+    "#282c34",
+    "WenQuanYi Micro Hei Mono",
+    12,
+    false,
+    false
+  ],
+  "margins": [
+    "#636d83",
+    "#282c34",
+    "WenQuanYi Micro Hei Mono",
+    18,
+    false,
+    false
+  ],
+  "other": {
+    "cursorColor": "#528bff",
+    "cursorLineColor": "#2c313c",
+    "dockBarBackgroundColor": "#282c34",
+    "dockBarForegroundColor": "#7F848E",
+    "statusBarBackgroundColor": "#21252b",
+    "statusBarForegroundColor": "#7F848E",
+    "selectionBackgroundColor": "#404859",
+    "selectionForegroundColor": "#ABB2BF",
+    "indentationGuidesForegroundColor": "#636d83",
+    "indentationGuidesBackgroundColor": "#636d83",
+    "breakpointBackgroundColor": "#e51400",
+    "breakpointForegroundColor": "#e51400",
+    "matchedBraceBackgroundColor": "#515A6B",
+    "matchedBraceForegroundColor": "#ABB2BF",
+    "unmatchedBraceBackgroundColor": "#282c34",
+    "unmatchedBraceForegroundColor": "#ABB2BF"
+  }
+}

@@ -1,3 +1,0 @@
-1.2.0版本，lexer.py文件中的self.theme是一个主题字典 完成
-1.2.0 lexer.py 把装饰器和注释完成，使用\n作为结束符
-    注意update的requests库，需要考虑安装插件的时候，怎么安装依赖库
