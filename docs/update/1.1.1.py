@@ -12,10 +12,10 @@ update_file = temp_path + '/1.1.1.zip'
 
 def get_upgrade():
     try:
-        with open(update_file, 'w+', encoding='UTF-8') as f:
-            f.write(requests.get(
-                'https://sailpye.eace.top/dist/1.1.1.zip'))
-
+        r = requests.get(
+            'https://sailpye.eace.top/dist/1.1.1.zip')
+        with open(update_file, 'w+b') as f:
+            f.write(r.content)
         z = zipfile.ZipFile(update_file, 'r')
         z.extractall(new_path)
         with open(update_path + '/Version', 'w+', encoding='UTF-8') as f:
@@ -38,4 +38,6 @@ if __name__ == "__main__":
     if not isExists:
         os.makedirs(temp_path)
 
-    threading.Thread(target=get_upgrade,daemon=True).start()
+    upgrade = threading.Thread(target=get_upgrade, daemon=True)
+    upgrade.start()
+    upgrade.join()
