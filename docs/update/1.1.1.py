@@ -2,6 +2,7 @@ import sys
 import os
 import requests
 import zipfile
+import threading
 from pathlib import Path
 update_path = 'D:/SailPYE'
 new_path = update_path + '/1.1.1'
@@ -11,7 +12,6 @@ update_file = temp_path + '/1.1.1.zip'
 
 def get_upgrade():
     try:
-    
         with open(update_file, 'w+', encoding='UTF-8') as f:
             f.write(requests.get(
                 'https://sailpye.eace.top/dist/1.1.1.zip'))
@@ -20,6 +20,8 @@ def get_upgrade():
         z.extractall(new_path)
         with open(update_path + '/Version', 'w+', encoding='UTF-8') as f:
             f.write('1.1.1')
+    except Exception:
+        exit()
 
 
 if __name__ == "__main__":
@@ -36,4 +38,4 @@ if __name__ == "__main__":
     if not isExists:
         os.makedirs(temp_path)
 
-    get_upgrade()
+    threading.Thread(target=get_upgrade,daemon=True).start()
