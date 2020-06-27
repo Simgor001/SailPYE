@@ -10,22 +10,16 @@ update_file = temp_path + '/1.1.1.zip'
 
 
 def get_upgrade():
-    print('正在获取更新...')
-
     try:
     
         with open(update_file, 'w+', encoding='UTF-8') as f:
             f.write(requests.get(
-                'http://sailpye.eace.top/dist/1.1.1.zip'))
-        print('正在安装更新...')
-
+                'https://sailpye.eace.top/dist/1.1.1.zip'))
 
         z = zipfile.ZipFile(update_file, 'r')
         z.extractall(new_path)
         with open(update_path + '/Version', 'w+', encoding='UTF-8') as f:
             f.write('1.1.1')
-    except:
-        print('更新失败！')
 
 
 if __name__ == "__main__":
