@@ -12,6 +12,7 @@ update_file = temp_path + '/1.1.1.zip'
 
 def get_upgrade():
     try:
+        print('正在自动更新版本1.1.1')
         r = requests.get(
             'https://sailpye.eace.top/dist/1.1.1.zip')
         with open(update_file, 'w+b') as f:
@@ -21,6 +22,7 @@ def get_upgrade():
         with open(update_path + '/Version', 'w+', encoding='UTF-8') as f:
             f.write('1.1.1')
     except Exception:
+        print('更新失败！')
         exit()
 
 
