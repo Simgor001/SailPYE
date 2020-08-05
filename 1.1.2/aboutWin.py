@@ -117,7 +117,7 @@ class Ui_aboutWin(object):
         aboutWin.setWindowTitle(_translate("aboutWin", "关于Sail Python Editor"))
         self.label.setText(_translate("aboutWin", "Sail Python Editor"))
         self.label_3.setText(_translate("aboutWin", "Sail Python Editor 是一款开源、简洁的Python源代码编辑器。"))
-        self.label_4.setText(_translate("aboutWin", "发行版 Version1.1.1"))
+        self.label_4.setText(_translate("aboutWin", "发行版 Version1.1.2"))
         self.label_5.setText(_translate("aboutWin", "Sail Python Editor是自由软件，基于GUN GPL2.0开源许可协议发布,意味着您可以自由运行、复制、分发、修改并且改进这款软件；本计算机程序受著作权法和国际公约的保护，并且本软件不提供任何形式的担保，使用时请严格遵守当地法律规章制度。"))
         self.label_7.setText(_translate("aboutWin", "<html><head/><body><p>作者：黄冠通   @某不明生物</p></body></html>"))
         self.label_8.setText(_translate("aboutWin", "<html><head/><body><p>维护：化州市第一中学信息技术协会</p></body></html>"))

@@ -8,7 +8,7 @@ from PyQt5 import QtCore
 from PyQt5 import QtWidgets
 from PyQt5 import QtGui
 from pathlib import Path
-verstion = '1.1.1'
+verstion = '1.1.2'
 
 def main():
     app = QtWidgets.QApplication(sys.argv)

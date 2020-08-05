@@ -134,7 +134,7 @@ color: rgb(85, 87, 83);</string>
 color: rgb(136, 138, 133);</string>
    </property>
    <property name="text">
-    <string>发行版 Version1.1.1</string>
+    <string>发行版 Version1.1.2</string>
    </property>
    <property name="alignment">
     <set>Qt::AlignCenter</set>
