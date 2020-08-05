@@ -88,7 +88,7 @@ class core(GUI.mainWin):
                     self, '错误', '打开文件"%s"失败！该文件不是Python源代码文件！' % file_name)
                 sys.exit('10 打开的文件不是Python源代码文件')
             self.file_name = file_name
-            self.setWindowTitle(self.file_name+' - Sail Pyton Editor')
+            self.setWindowTitle(self.file_name+' - Sail Python Editor')
             if not os.path.isfile(file_name):
                 return
             with open(self.file_name, 'r', encoding='UTF-8') as f:
@@ -101,7 +101,7 @@ class core(GUI.mainWin):
             if self.file_name != '':
                 with open(self.file_name, 'r', encoding='UTF-8') as f:
                     self.editor.setText(f.read())
-                self.setWindowTitle(self.file_name+' - Sail Pyton Editor')
+                self.setWindowTitle(self.file_name+' - Sail Python Editor')
         self.editor.setModified(False)
 
     def save_file(self):
@@ -243,7 +243,7 @@ class core(GUI.mainWin):
             if self.file_name != '':
                 with open(self.file_name, 'w', encoding='UTF-8') as f:
                     f.write(self.editor.text())
-                self.setWindowTitle(self.file_name+' - Sail Pyton Editor')
+                self.setWindowTitle(self.file_name+' - Sail Python Editor')
                 self.editor.setModified(False)
                 return 1
             else:

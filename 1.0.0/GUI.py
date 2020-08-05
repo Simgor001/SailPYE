@@ -28,7 +28,7 @@ class mainWin(QtWidgets.QMainWindow, Ui_MainWindow):
 
     def setupUi(self, MainWindow):
         super(mainWin, self).setupUi(self)
-        self.setWindowTitle('Sail Pyton Editor')
+        self.setWindowTitle('Sail Python Editor')
 
         self.editor = Qsci.QsciScintilla(self)
         self.setCentralWidget(self.editor)
