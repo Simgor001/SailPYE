@@ -1,4 +1,5 @@
 # Sail Python Editor
+> 该项目是作者初学Python时编写的，有非常多bug，现已停止维护！
 
 ### Sail Python Editor 简称SailPYE，是一款使用PyQt5开发且开源、简洁的Python源代码编辑器。
 
@@ -8,7 +9,7 @@ Sail Python Editor是一款跨平台的软件，你可以安装到任何支持�
 
 
 
-![主界面]( http://sailpye.eace.top/SailPYE.png )
+![主界面](https://blog.simgor001.top/sp/SailPYE.png)
 
 ## 目录结构
 
